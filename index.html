@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HST 100 — Объяснялка</title>
+<style>
+:root { --bg:#fff; --ink:#111; --muted:#333; --line:#bbb; --soft:#f4f4f4; --help:#eef6ff; --helpBorder:#9db7d4; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { width:min(100% - 1rem, 860px); margin:0 auto; padding:1rem 0 3rem; }
+header { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--line); padding:.55rem 0; }
+header .row { display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; }
+header strong { font-size:.95rem; }
+header input { flex:1; min-width:140px; border:1px solid var(--line); padding:.4rem .55rem; font:inherit; }
+nav { display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.4rem; }
+nav a { color:var(--ink); text-decoration:none; font-size:.78rem; border:1px solid var(--line); padding:.2rem .45rem; }
+nav a:hover { background:var(--soft); }
+h1 { font-size:1.35rem; margin:1rem 0 .4rem; }
+h2 { font-size:1.15rem; margin:1.6rem 0 .5rem; padding-bottom:.25rem; border-bottom:2px solid #111; }
+h3 { font-size:1.02rem; margin:1.1rem 0 .35rem; }
+p { margin:.4rem 0; }
+.muted { color:var(--muted); }
+.small { font-size:.92rem; }
+.en { font-weight:800; }
+section { scroll-margin-top:70px; margin-bottom:1.1rem; }
+.box { border:1px solid var(--line); padding:.7rem .8rem; margin:.5rem 0; }
+.soft { background:var(--soft); }
+.help {
+  background: var(--help);
+  border: 1px solid var(--helpBorder);
+  border-left: 4px solid #3a6ea5;
+  padding: .65rem .75rem;
+  margin: .45rem 0 .7rem;
+  font-size: .95rem;
+}
+.help b { display:inline; }
+.pipeline { display:grid; gap:.35rem; margin:.55rem 0; }
+.pipeline div { border:1px solid #111; padding:.5rem .65rem; font-weight:700; }
+.step,.ex,.arg { border:1px solid var(--line); padding:.6rem .7rem; margin:.45rem 0; }
+.ex { border-left:4px solid #111; background:var(--soft); }
+.good { border-left-color:#0a7a0a; }
+.bad { border-left-color:#a00; }
+.counter { background:#fafafa; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; margin:.45rem 0; }
+th,td { border:1px solid var(--line); padding:.4rem .5rem; text-align:left; vertical-align:top; }
+th { background:var(--soft); }
+details { border:1px solid var(--line); margin:.4rem 0; }
+summary { cursor:pointer; padding:.55rem .7rem; font-weight:800; background:var(--soft); }
+details[open] summary { border-bottom:1px solid var(--line); }
+details .body { padding:.7rem .8rem; }
+ul,ol { margin:.35rem 0; padding-left:1.2rem; }
+li { margin:.25rem 0; }
+.grid { display:grid; gap:.5rem; }
+@media (min-width:720px){ .grid-2{ grid-template-columns:1fr 1fr; } }
+.hl { background:#ff0; }
+@media (max-width:640px){
+  body{ font-size:15px; }
+  .wrap{ width:min(100% - .75rem, 860px); }
+  table{ display:block; overflow-x:auto; }
+}
+@media print{
+  header{ position:static; }
+  header input,nav{ display:none; }
+  details{ border:0; break-inside:avoid; }
+  summary{ display:none; }
+  details .body{ display:block !important; padding:0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap" style="padding:0;">
+    <div class="row">
+      <strong>HST 100 · простая объяснялка</strong>
+      <input id="q" type="search" placeholder="поиск…" />
+    </div>
+    <nav>
+      <a href="#pipe">План</a>
+      <a href="#how">Как писать</a>
+      <a href="#short">Короткие решения</a>
+      <a href="#themes">Темы</a>
+      <a href="#mistakes">Ошибки</a>
+      <a href="#dates">Даты</a>
+      <a href="#terms">Слова</a>
+      <a href="#answers">Длинные ответы</a>
+      <a href="#sources">Источники</a>
+      <a href="#pairs">Пары</a>
+      <a href="#facts">Факты</a>
+      <a href="#vocab">Перевод</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="content">
+
+<h1>HST 100 Midterm — очень просто</h1>
+<p>Это шпаргалка к экзамену по истории Казахстана. Текст объясняет по-русски. Важные слова для бланка оставляем на <span class="en">English</span>, потому что так обычно надо писать на экзамене.</p>
+<div class="help">
+  <b>Главное одной фразой:</b> ты выбираешь 2 вопроса из 3. На каждый вопрос пишешь не «сочинение», а чёткие куски: сначала 2 термина, потом одну умную главную мысль, потом 3 доказательства с источниками, потом одно возражение.
+</div>
+
+<section id="pipe">
+  <h2>0. Что делать на экзамене по шагам</h2>
+  <div class="pipeline">
+    <div>Шаг 1. Прочитай все 3 вопроса спокойно</div>
+    <div>Шаг 2. Для каждого вопроса спроси себя: знаю ли я 2 слова-термина?</div>
+    <div>Шаг 3. Знаю ли я 3 разных источника (книги/письма) под доказательства?</div>
+    <div>Шаг 4. Знаю ли я 1 источник для возражения?</div>
+    <div>Шаг 5. Выбери 2 вопроса, где на всё это есть ответы</div>
+    <div>Шаг 6. Пиши строго по порядку: Terms → Thesis → Arg1 → Arg2 → Arg3 → Counter</div>
+    <div>Шаг 7. Перед сдачей проверь: в каждом доказательстве есть имя автора и год?</div>
+  </div>
+  <div class="help">
+    Не прыгай сразу писать длинный текст. Сначала выбери вопросы, где у тебя есть «мясо»: конкретные факты и имена источников. Если источника нет — балл сразу падает.
+  </div>
+
+  <table>
+    <tr><th>Часть</th><th>Баллы</th><th>Что это человеческим языком</th></tr>
+    <tr><td>A · Terms</td><td>8</td><td>Объясни 2 слова из вопроса</td></tr>
+    <tr><td>B · Thesis</td><td>10</td><td>Одна главная умная мысль-ответ</td></tr>
+    <tr><td>C · 3 Arguments</td><td>24</td><td>Три доказательства с источниками</td></tr>
+    <tr><td>C · Counterargument</td><td>8</td><td>Одно сильное «но», и почему ты всё равно прав</td></tr>
+  </table>
+  <div class="help">
+    Два вопроса = 100 баллов. Один вопрос максимум 50. Поэтому лучше два средних сильных ответа, чем один идеальный и один пустой.
+  </div>
+</section>
+
+<section id="how">
+  <h2>1. Как писать каждую часть</h2>
+
+  <h3>Часть A. Term (термин)</h3>
+  <p>Преподаватель хочет увидеть 4 вещи. Если забыл одну — балл меньше.</p>
+  <ol>
+    <li><span class="en">meaning</span> — что это такое</li>
+    <li><span class="en">time</span> — когда было</li>
+    <li><span class="en">place</span> — где было</li>
+    <li><span class="en">significance</span> — почему это важно для истории Qazaqstan / темы курса</li>
+  </ol>
+  <div class="help">
+    <b>По-простому:</b> не пиши только «это собрание». Напиши: что, когда, где, и зачем нам это знать.
+  </div>
+  <div class="step">
+    <b>Шаблон на английском для бланка:</b><br>
+    <span class="en">[Term] is [what it is], in [when] in/on [where]. Significance: [why it matters].</span>
+  </div>
+  <div class="ex good">
+    <b>Хороший пример — Quriltai</b><br>
+    Quriltai is a council of Chinggisid princes and chiefs (13th century Mongol Empire and later steppe states) that decided succession and big political questions. Significance: it shows Chinggisid power was collective, and later Qazaq politics also needed elite agreement.
+    <div class="help" style="margin-top:.5rem;">
+      <b>Перевод смысла:</b> Курултай — это совет важных князей и вождей. Там решали, кто будет править и что делать дальше. Это важно, потому что хан не был богом-царём один: ему нужно было согласие элиты. Такая же логика потом видна и у казахов.
+    </div>
+  </div>
+  <div class="ex bad">
+    <b>Плохой пример:</b> Quriltai is a Mongol meeting.<br>
+    <div class="help" style="margin-top:.4rem;">Тут нет когда, где и почему важно. Поэтому мало баллов.</div>
+  </div>
+
+  <h3>Часть B. Thesis (главная мысль)</h3>
+  <p>Thesis — это твой короткий ответ на вопрос. Не «да». Не «это важно». Нужно сказать <b>что именно</b> и <b>почему</b>.</p>
+  <div class="help">
+    Представь: друг спросил «ну и что в итоге?». Ты отвечаешь одним-двумя предложениями с причиной.
+  </div>
+  <div class="step">
+    <b>Удобные шаблоны:</b><br>
+    1) <span class="en">X was less A than B, because ...</span><br>
+    = «X было скорее не А, а Б, потому что...»<br><br>
+    2) <span class="en">Although A, X was primarily B...</span><br>
+    = «Хотя было А, на самом деле важнее Б...»<br><br>
+    3) Если вопрос <span class="en">to what extent</span> («в какой степени»):<br>
+    <span class="en">To a large/limited extent ..., because ...</span>
+  </div>
+  <div class="ex good">
+    Abu'l-Khayr's 1731 oath was less a voluntary submission of the Qazaqs than a personal bid by a weakened Junior Horde khan for Russian protection, which Russia then reinterpreted as subjecthood.
+    <div class="help" style="margin-top:.5rem;">
+      <b>По-простому:</b> Присяга 1731 года — это не «весь казахский народ сам радостно сдался России». Это личный ход ослабленного хана Младшего жуза: он хотел защиту. А Россия потом прочитала это как «теперь вы наши подданные».
+    </div>
+  </div>
+  <div class="ex bad">
+    Abu'l-Khayr's submission was important for Russia.<br>
+    <div class="help" style="margin-top:.4rem;">Тут нет анализа. Важно — и что? Почему? В какой степени? Нет ответа.</div>
+  </div>
+
+  <h3>Часть C. Argument (доказательство)</h3>
+  <p>Каждый из трёх аргументов пиши одинаково. Это конвейер из 4 строк:</p>
+  <div class="pipeline">
+    <div>1. CLAIM — что ты утверждаешь</div>
+    <div>2. EVIDENCE — конкретный факт (имя, дата, число, случай)</div>
+    <div>3. SOURCE — кто написал / какой документ + год</div>
+    <div>4. LINK — почему это доказывает твою thesis + тема курса</div>
+  </div>
+  <div class="help">
+    <b>Очень просто:</b><br>
+    1) Я говорю вот что.<br>
+    2) Вот факт из истории.<br>
+    3) Вот откуда я это взял.<br>
+    4) Вот почему этот факт поддерживает мою главную мысль.
+  </div>
+  <div class="ex good">
+    <b>Claim:</b> The khan could not bind his people alone.<br>
+    <b>Evidence:</b> Abu'l-Khayr met Tevkelev in disguise; about 30 starshinas were persuaded with gifts.<br>
+    <b>Source:</b> Tevkelev, Account of Abu'l-Khayr's Submission, 1731.<br>
+    <b>Link:</b> So the “submission” was not the will of all Qazaqs (theme: imperial encounter / legitimacy).
+    <div class="help" style="margin-top:.5rem;">
+      <b>По-русски:</b><br>
+      Утверждение: хан один не мог заставить весь народ.<br>
+      Факт: он тайно встретился с Тевкелевым; примерно 30 старшин уговорили подарками.<br>
+      Источник: Тевкелев, 1731.<br>
+      Связка: значит, это не было «добровольной сдачей всего народа».
+    </div>
+  </div>
+  <p><b>Важно:</b> если нет источника (source), за этот кусок часто ставят мало — около половины или меньше.</p>
+
+  <h3>Counterargument (возражение)</h3>
+  <p>Тут ты сам себе говоришь: «А вдруг кто-то не согласится?» И отвечаешь.</p>
+  <div class="pipeline">
+    <div>1. Другая сторона думает вот так</div>
+    <div>2. У неё есть вот такой источник/факт</div>
+    <div>3. However (однако): почему это не ломает твою мысль</div>
+  </div>
+  <div class="help">
+    Плохой counter: «некоторые люди могут не согласиться». Это пусто.<br>
+    Хороший counter: назвать реальный факт против тебя и объяснить, почему он слабее.
+  </div>
+  <div class="ex good">
+    A critic could argue the oath was real because Bukenbai and others swore (Tevkelev, 1731). However, they were persuaded by gifts and threats, so this shows elite division, not national consent.
+    <div class="help" style="margin-top:.5rem;">
+      <b>По-русски:</b> Критик скажет: присяга настоящая, ведь Букенбай и другие присягнули. Но: их уговорили подарками и угрозами. Значит, это раскол элиты, а не согласие всего народа.
+    </div>
+  </div>
+
+  <h3>OPVL — быстрая проверка источника</h3>
+  <p>Иногда полезно одной фразой сказать, почему источник хороший или кривой.</p>
+  <table>
+    <tr><th>Буква</th><th>English</th><th>По-простому</th></tr>
+    <tr><td>O</td><td>Origin</td><td>Кто написал? Когда? Что это за текст?</td></tr>
+    <tr><td>P</td><td>Purpose / Audience</td><td>Зачем написал и для кого?</td></tr>
+    <tr><td>V</td><td>Value</td><td>Чем полезен для нашего вопроса?</td></tr>
+    <tr><td>L</td><td>Limitation</td><td>Где врёт / однобок / чего не видит?</td></tr>
+  </table>
+  <div class="help">
+    Пример на Тевкелеве: он русский дипломат, пишет отчёт начальству, поэтому хочет выглядеть успешным. Факты про подарки ценны, но казахской версии событий у нас нет.
+  </div>
+</section>
+
+<section id="themes">
+  <h2>2. Темы курса (короткие фразы для Link)</h2>
+  <p>В конце аргумента полезно назвать тему курса одним кусочком English.</p>
+  <div class="help">
+    <b>Зачем это?</b> Препод смотрит, понимаешь ли ты «о чём вообще курс», а не просто кидаешь случайный факт.
+    Не пиши сочинение. Хвостик в скобках норм: <i>(theme: colonial administration)</i>.
+  </div>
+  <ul>
+    <li><span class="en">Chinggisid legitimacy</span> — право быть ханом есть у потомков Чингисхана</li>
+    <li><span class="en">Khan–elite relations</span> — хан держится на согласии элиты, а не только на титуле</li>
+    <li><span class="en">Formation of Qazaq polity/identity</span> — как появилось казахское политическое сообщество</li>
+    <li><span class="en">Imperial encounters</span> — встреча/столкновение со империями (Россия, Цин)</li>
+    <li><span class="en">Colonial administration</span> — как империя управляла степью новыми правилами</li>
+    <li><span class="en">Resistance and interpretation</span> — сопротивление и как его потом объясняют историки</li>
+    <li><span class="en">Islam and identity</span> — ислам и то, как казахи себя понимали</li>
+    <li><span class="en">Reading sources</span> — уметь читать источник с учётом предвзятости</li>
+  </ul>
+  <div class="help">
+    <b>Какую тему к какому вопросу:</b><br>
+    Чингисиды / коллективная власть → legitimacy, khan–elite<br>
+    qazaq / ханство → formation of polity<br>
+    1731 / Цин / Губайдулла → imperial encounters<br>
+    1822 / Кенесары → colonial administration + resistance<br>
+    Ислам → Islam and identity<br>
+    Вебер / джунгары → nomadic politics / imperial encounters
+  </div>
+</section>
+
+<section id="mistakes">
+  <h2>3. Частые ошибки (не делай так)</h2>
+  <div class="help">
+    Эти ошибки снимают баллы очень часто. Если сомневаешься — пиши более осторожную формулировку.
+  </div>
+  <table>
+    <tr><th>Плохо</th><th>Почему плохо</th><th>Как лучше</th></tr>
+    <tr>
+      <td>Писать «Kazakh nation» про XV–XVIII век</td>
+      <td>Нации в современном смысле ещё не было</td>
+      <td>Пиши Qazaq polity / khanate / political status</td>
+    </tr>
+    <tr>
+      <td>«В 1731 казахи добровольно вошли в Россию»</td>
+      <td>Это был ход одного хана, элита спорила</td>
+      <td>Personal bid for protection; Russia read it as subjecthood</td>
+    </tr>
+    <tr>
+      <td>«Хан = абсолютный царь»</td>
+      <td>Без элиты и войска хан слабый</td>
+      <td>Khan depends on followers / elites</td>
+    </tr>
+    <tr>
+      <td>Путать Qasim Khan и Kasym (отец Кенесары)</td>
+      <td>Разные люди и века</td>
+      <td>Всегда добавляй контекст/год</td>
+    </tr>
+    <tr>
+      <td>Верить числу «1 million» у Haydar как факту</td>
+      <td>Это преувеличение</td>
+      <td>Скажи: rhetorical number / exaggeration</td>
+    </tr>
+    <tr>
+      <td>Цитировать сборник/reader</td>
+      <td>Препод хочет конкретный документ</td>
+      <td>Author/Document + year</td>
+    </tr>
+    <tr>
+      <td>Думать, что русское слово «Kirgiz» = современные кыргызы</td>
+      <td>Так часто называли казахов</td>
+      <td>Kirgiz-Kaisak ≈ Qazaqs</td>
+    </tr>
+  </table>
+  <div class="help">
+    <b>Ещё простыми словами:</b><br>
+    1) Не переноси сегодняшние слова («нация», «независимое государство») в XV век.<br>
+    2) Не делай из одного хана «весь народ».<br>
+    3) Не делай из хана путина-абсолюта степи.<br>
+    4) Не путай тёзок.<br>
+    5) Большие красивые числа у средневековых авторов часто враньё ради эффекта.
+  </div>
+</section>
+
+<section id="dates">
+  <h2>4. Важные даты</h2>
+  <div class="help">
+    Дата нужна, чтобы факт не висел в воздухе. Если точную дату не помнишь, лучше написать век или «around», чем врать точную цифру.
+  </div>
+  <table>
+    <tr><th>Когда</th><th>Что случилось</th><th>Зачем помнить</th></tr>
+    <tr><td>около 1219</td><td>Спор о наследнике Чингиса, выбрали Ögedei</td><td>коллективное решение власти</td></tr>
+    <tr><td>1313–1341</td><td>Uzbek Khan и ислам в Золотой Орде</td><td>ислам у кочевников раньше России</td></tr>
+    <tr><td>1465–66</td><td>Giray и Jani-Beg уходят от Abu'l-Khayr</td><td>рождение Qazaq polity</td></tr>
+    <tr><td>около 1510s</td><td>Сила Qasim Khan</td><td>пик раннего ханства</td></tr>
+    <tr><td>1723–27</td><td>Aqtaban Shubyryndy (беда от джунгар)</td><td>огромный кризис</td></tr>
+    <tr><td>1731</td><td>Присяга Abu'l-Khayr / Tevkelev</td><td>спор про «добровольность»</td></tr>
+    <tr><td>1734</td><td>План Kirilov / Orenburg</td><td>Россия хочет форты и расширение</td></tr>
+    <tr><td>1755–59</td><td>Цин громит джунгар; Ablai пишет Цин</td><td>новый сосед-империя</td></tr>
+    <tr><td>1788</td><td>OMSA</td><td>государство оформляет ислам</td></tr>
+    <tr><td>1822–24</td><td>Speransky Statute; отмена ханского титула</td><td>прямое управление</td></tr>
+    <tr><td>1837–47</td><td>Восстание Kenesary</td><td>главный кейс сопротивления</td></tr>
+    <tr><td>1868</td><td>Казахов уводят из OMSA</td><td>разворот политики к исламу</td></tr>
+  </table>
+  <div class="help">
+    <b>Мини-связки дат:</b><br>
+    1465–66 = казахи «откололись».<br>
+    1731 = Россия входит как «защитник».<br>
+    1757 = Цин тоже становится игроком.<br>
+    1822–24 = Россия перестаёт терпеть старую ханскую модель.<br>
+    1837–47 = Кенесары бьётся уже против этой новой модели.
+  </div>
+</section>
+
+<section id="terms">
+  <h2>5. Слова и термины (с нормальным объяснением)</h2>
+  <p>Сверху — как можно писать на бланке. Снизу в синей рамке — простыми словами.</p>
+
+  <h3>A. Мир Чингисидов</h3>
+
+  <details open><summary>Chinggisid political system / Altan urugh</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Political order where only descendants of Chinggis Khan (the golden clan, altan urugh) can become khans; power is shared among princes across Eurasia from the 13th century.</p>
+    <p><b>Significance:</b> Explains why Qazaq khans claimed Jochid Chinggisid blood, and why non-Chinggisids ruled as amirs, not khans.</p>
+    <div class="help"><b>По-простому:</b> Чтобы быть ханом, нужно быть из «золотой семьи» Чингисхана. Не любой батыр мог сказать «я хан». Поэтому казахские ханы подчёркивали происхождение. А сильные люди не из этой крови часто были амирами — большой властью, но без ханского титула.</div>
+  </div></details>
+
+  <details><summary>Quriltai</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Council of Mongol/Chinggisid princes and chiefs that decided succession and major political/military issues (13th c. Mongol Empire, later steppe states).</p>
+    <p><b>Significance:</b> Shows rule was collective; later Qazaq politics also needed elite agreement.</p>
+    <div class="help"><b>По-простому:</b> Это большой совет важных людей. Там спорили и выбирали, кто будет главным. Значит, власть не была «один человек решил — все молчат».</div>
+  </div></details>
+
+  <details><summary>Yasa (Great Yasa)</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Chinggis Khan’s set of rules and ordinances for discipline, justice, family and politics; not one neat modern law book (described by Juvayni).</p>
+    <p><b>Significance:</b> Helped unify diverse peoples under one political order and was used to present Mongol rule as lawful.</p>
+    <div class="help"><b>По-простому:</b> Это правила Чингисхана: как слушаться, как судить, как держать порядок. Не обязательно одна толстая книга, как сегодняшние законы, но идея общая: есть «закон Чингиса», и все должны его учитывать.</div>
+  </div></details>
+
+  <details><summary>Ulus / Appanage</summary>
+  <div class="body">
+    <p><b>На бланк:</b> A share of the empire — land and people — given to a prince (for example Jochi received the Qipchaq Steppe area).</p>
+    <p><b>Significance:</b> Kept Chinggisid family in power across a huge space, but later helped the empire break into separate pieces.</p>
+    <div class="help"><b>По-простому:</b> Империю порезали на куски между сыновьями/родственниками. Это как раздать братьям разные комнаты в огромном доме. Сначала дом один, потом каждый живёт сам по себе. Из зоны Джучи потом вырос мир, где появились казахи.</div>
+  </div></details>
+
+  <details><summary>Lateral succession</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Succession that can pass sideways to brothers or cousins, not only father to eldest son; often decided at a quriltai by seniority/ability.</p>
+    <p><b>Significance:</b> Balanced the royal family, but also caused fights and splits.</p>
+    <div class="help"><b>По-простому:</b> Править мог не только сын. Мог брат, мог другой родственник из рода, если его считали лучше/старше/сильнее. Это гибко, но из-за этого часто ссорились «кто главнее».</div>
+  </div></details>
+
+  <details><summary>Authority / Legitimacy</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Authority = capacity/right to rule. Legitimacy = people’s acceptance that this rule is rightful (Weber). Mongol history shows charismatic, traditional, and legal-rational forms.</p>
+    <p><b>Significance:</b> Core course theme from Chinggis to later khans like Ablai and Kenesary.</p>
+    <div class="help"><b>По-простому:</b> Authority — можешь ли ты править. Legitimacy — согласны ли люди, что ты правишь по праву. Можно держать людей страхом, а можно — верой, что ты «настоящий» правитель. На курсе всё время спрашивают: откуда берётся это право?</div>
+  </div></details>
+
+  <details><summary>Nomadic pastoralism</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Way of life based on livestock and seasonal movement across pastures; economy is not fully self-sufficient, so nomads trade with farming societies.</p>
+    <p><b>Significance:</b> Explains why steppe politics were mobile, hard to tax, and why pasture loss under Russia hurt so much.</p>
+    <div class="help"><b>По-простому:</b> Люди живут со стадами и кочуют туда, где есть трава. У них нет «завода» и часто нет жёстких границ как у земледельцев. Поэтому государством управлять сложнее, а пастбища — это жизнь.</div>
+  </div></details>
+
+  <details><summary>Khan / Sultan / Amir</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Khan = Chinggisid top title (still negotiated). Sultan = Chinggisid prince who can become khan. Amir = non-Chinggisid tribal leader with real local power but cannot claim khanship.</p>
+    <p><b>Significance:</b> Shows decentralized politics: title and real power were not always the same.</p>
+    <div class="help"><b>По-простому:</b> Хан — «официально главный» из чингизидов. Султан — тоже из семьи, но пока не хан. Амир — сильный вождь не из чингизидов. Иногда амир на деле круче хана (как Тимур с «кукольным» ханом).</div>
+  </div></details>
+
+  <h3>B. Происхождение казахов и общество</h3>
+
+  <details><summary>Qazaq / Qazaqlıq / Consolidation</summary>
+  <div class="body">
+    <p><b>На бланк:</b> In the 15th century, qazaq meant a free/separated political status, not a modern ethnicity. Qazaqlıq = the act of breaking away. Consolidation = later gathering power around leaders.</p>
+    <p><b>Significance:</b> The Qazaq polity began as secession from Abu'l-Khayr’s world, then grew into a lasting political community.</p>
+    <div class="help"><b>По-простому:</b> Сначала «қазақ» — это не «национальность в паспорте». Это статус: человек/группа ушли жить сами, отдельно от старого хана. Потом уже это имя «прилипло» к сообществу. Сначала ушли (qazaqlıq), потом собрали силу (consolidation).</div>
+  </div></details>
+
+  <details><summary>Uzbek-Qazaq / Giray &amp; Jani-Beg / Qasim</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Around 1465–66 Giray and Jani-Beg fled Abu'l-Khayr to Moghulistan and received lands near Chu and Quzi Bashi; their following (~200,000 in Haydar) were called Uzbek-Qazaqs. Qasim later marked an early peak of power.</p>
+    <p><b>Significance:</b> This is the classic origin story of the Qazaq polity in course sources.</p>
+    <div class="help"><b>По-простому:</b> Два чингизида не ужились с Абулхайром, ушли под защиту Моголистана, получили земли, к ним потянулись люди. Так началась отдельная казахская политическая история. При Касыме сила была особенно большой (числа у Хайдара часто дутые, но направление понятно).</div>
+  </div></details>
+
+  <details><summary>Three Jüz / Polycentrism</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Senior, Middle, Junior groupings; politics often had several centers of power at once (polycentrism). Sabol warns zhuz were not neat modern political units.</p>
+    <p><b>Significance:</b> Flexibility helped survival, but made unified action harder against empires.</p>
+    <div class="help"><b>По-простому:</b> Не всегда был один пульт управления на всю степь. Было несколько зон и лидеров. Это как несколько старших в большой семье: удобно выживать, трудно всем сразу ударить в одну точку.</div>
+  </div></details>
+
+  <details><summary>Adat / Sharia / Baranta</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Adat = customary law; sharia = Islamic law; they often worked together. Baranta/barymta = a raid used as pressure/compensation in disputes; Russians often called it theft.</p>
+    <p><b>Significance:</b> Shows real legal culture of the steppe and why Russians misread Qazaq actions as simple crime.</p>
+    <div class="help"><b>По-простому:</b> У людей были свои обычаи и исламские правила сразу. Баранта для них могла быть способом решить спор/вернуть долг. Для русских это часто выглядело просто как разбой. Из-за этого легко навешивали ярлык «разбойник» (в том числе на Кенесары).</div>
+  </div></details>
+
+  <h3>C. Россия</h3>
+
+  <details><summary>Subjecthood / Patronage / Oath / Gift-giving</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Subjecthood (poddanstvo) = Russian legal status of being a subject. Patronage = protection in exchange for loyalty. Oath = formal loyalty promise. Gift-giving = diplomatic tool to win elites (Tevkelev used gifts for ~30 starshinas).</p>
+    <p><b>Significance:</b> In 1731, Qazaq and Russian sides could mean different things by the same ceremony.</p>
+    <div class="help"><b>По-простому:</b> Хан мог думать: «мне нужна крыша и помощь». Россия думала: «отлично, теперь вы подданные». Плюс лояльность часто покупали подарками старшинам. Поэтому «присяга» — это не всегда чистая любовь народа к империи.</div>
+  </div></details>
+
+  <details><summary>Speransky Statute (1822) / Prikaz / Okrug / Agha-sultan</summary>
+  <div class="body">
+    <p><b>На бланк:</b> 1822 law for Siberian Kazakhs creating territorial administration: aul → volost' → okrug, with prikaz offices and elected/confirmed agha-sultans; restricted mobility and weakened traditional khanship.</p>
+    <p><b>Significance:</b> Shift from indirect rule through khans to direct colonial bureaucracy; major cause of later revolt.</p>
+    <div class="help"><b>По-простому:</b> Раньше Россия чаще опиралась на ханов и султанов. После 1822 она сама расчертила степь на округа и канцелярии. Ханский титул потом убрали. Для кочевников это удар: меньше свободы движения, новые налоги/порядки, старая власть ломается.</div>
+  </div></details>
+
+  <details><summary>Abolition of khan title (1824)</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Russia abolished the khan title on the Siberian steppe in 1824 (and later similarly elsewhere).</p>
+    <p><b>Significance:</b> Created a political vacuum that Kenesary tried to fill by restoring khanship.</p>
+    <div class="help"><b>По-простому:</b> Империя сказала: «ханов больше не будет в старом виде». А Кенесары как раз хотел снова быть ханом и вернуть старую модель власти.</div>
+  </div></details>
+
+  <details><summary>Yasak / Amanat / Inorodtsy / Kirgiz-Kaisak</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Yasak = tribute marking subjecthood. Amanat = hostages securing agreements. Inorodtsy = legal “aliens” in the empire. Kirgiz-Kaisak = Russian name for Qazaqs.</p>
+    <p><b>Significance:</b> These words show how Russia classified and controlled steppe peoples.</p>
+    <div class="help"><b>По-простому:</b> Ясак — дань. Аманат — родственника оставляют как залог мира. Инородцы — «не свои» в глазах империи. «Киргиз-кайсак» в русских бумагах часто = казахи. Не путай с сегодняшними кыргызами.</div>
+  </div></details>
+
+  <h3>D. Цин, джунгары, соседи</h3>
+
+  <details><summary>Junghars / Aqtaban Shubyryndy</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Oirat Junghar state pressed Qazaqs for pastures and power; 1723–27 Aqtaban Shubyryndy was a catastrophic period of defeat and flight; Qing destroyed Junghars in 1755–59.</p>
+    <p><b>Significance:</b> Pushed some Qazaq leaders toward Russia and later opened a Qing frontier.</p>
+    <div class="help"><b>По-простому:</b> Джунгары были страшным конкурентом за землю и силу. В 1720-е казахам было очень плохо. Когда Цин уничтожила джунгар, враг пропал, но появился новый огромный сосед — Цинская империя.</div>
+  </div></details>
+
+  <details><summary>Ejen–albatu / Qing titles (han, wang...)</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Ejen–albatu is a master–servant steppe political language used with the Qing. Qing also gave ranked titles (han, wang, gong, taiji) as prestige and recognition.</p>
+    <p><b>Significance:</b> Qazaqs used this language for legitimacy and diplomacy; Qing read stronger subordination; Russia later treated Qing titles as dangerous.</p>
+    <div class="help"><b>По-простому:</b> Аблай мог писать цинскому императору языком «мы ваши люди», чтобы получить защиту, титул, торговлю и вес дома. Это не всегда значило, что Цин реально управляет каждым аулом как своей губернией.</div>
+  </div></details>
+
+  <details><summary>Ghubaydulla incident (1824)</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Ghubaydulla sought a Qing han title while already under Russian authority, then renounced it under pressure, citing his Quran oath to the tsar.</p>
+    <p><b>Significance:</b> Shows the end of easy dual diplomacy after 1822: Russia could force a Russia-only choice.</p>
+    <div class="help"><b>По-простому:</b> Губайдулла попробовал играть на два фронта: и Россия, и Цин. Россия этого уже не терпела. Его по сути заставили отказаться от цинского титула. Это момент, когда «двойная дипломатия» ломается.</div>
+  </div></details>
+
+  <h3>E. Кенесары и ислам</h3>
+
+  <details><summary>Kenesary revolt / Zakat / National-liberation</summary>
+  <div class="body">
+    <p><b>На бланк:</b> Kenesary’s revolt (1837–47) sought recognition as khan, fewer forts/taxes, and protection of pastures; used tools like zakat. Later writers called it a national-liberation movement; Sabol argues it was mainly restoration of khanship, not modern nationalism.</p>
+    <p><b>Significance:</b> Central midterm debate about resistance and anachronism.</p>
+    <div class="help"><b>По-простому:</b> Кенесары хотел снова быть ханом и остановить русские порядки, которые ломали пастбища и старую власть. Позже его сделали «национальным героем войны за независимость». Сабол говорит: аккуратно, это уже поздняя рамка. В его письмах больше про титул, приказы, налоги и землю, чем про современную нацию.</div>
+  </div></details>
+
+  <details><summary>OMSA / Islamic transformation / Maktab</summary>
+  <div class="body">
+    <p><b>На бланк:</b> OMSA (1788) was a state Muslim administration licensing clergy. Frank’s “Islamic transformation” means deepening of schools, mosques, print and networks among already Muslim Qazaqs. Maktabs could even be in yurts.</p>
+    <p><b>Significance:</b> Islam was not a late Russian gift; Russian rule changed its institutions.</p>
+    <div class="help"><b>По-простому:</b> Казахи были мусульманами раньше, чем «русские их научили». При России стало больше мечетей, школ, книг, официальных имамов. Это не «первое обращение в ислам», а усиление и оформление исламской жизни. Были даже школы в юртах.</div>
+  </div></details>
+</section>
+
+<section id="short">
+  <h2>6. Короткие готовые решения по 12 вопросам</h2>
+  <div class="help">
+    Это самые важные карточки. На каждую: <b>что ответить одной фразой</b> → terms → thesis → 3 доказательства → counter.
+    На бланке пиши English. Синее — чтобы понять смысл.
+  </div>
+
+  <details open><summary>1. Как чингизиды решали, кто будет править?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Не просто «старший сын автоматически». Спорили в совете (quriltai), смотрели на кровь + способность, и делили земли между родственниками.</div>
+    <p><b>Terms:</b> Quriltai · Chinggisid political system / Yasa</p>
+    <p><b>Thesis:</b> Succession was negotiated among princes through lineage and ability at quriltai, not automatic primogeniture.</p>
+    <ol>
+      <li>Спор про наследника → Ögedei выбран — <span class="en">Secret History</span></li>
+      <li>Важны качества + роли сыновей — <span class="en">Secret History; Juvayni</span></li>
+      <li>Земли/власть делят по ulus — <span class="en">Juvayni</span></li>
+    </ol>
+    <p><b>Counter:</b> «Но происхождение всё равно решало». However: старший Jochi не стал ханом, выбрали Ögedei.</p>
+  </div></details>
+
+  <details open><summary>2. Насколько власть была коллективной, а не абсолютной?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> В большой степени коллективная. Хан важный, но без совета родни и элиты он не «бог-царь».</div>
+    <p><b>Terms:</b> Collective ruling / Quriltai · Ulus / Appanage</p>
+    <p><b>Thesis:</b> To a large extent Chinggisid rule was collective family politics, even though the great khan had high status.</p>
+    <ol>
+      <li>Наследование обсуждают вместе — <span class="en">Secret History</span></li>
+      <li>Juvayni: власть реально делят сыновья/внуки/дядья — <span class="en">Juvayni</span></li>
+      <li>Позже у казахов та же логика: хан зависит от followers — <span class="en">Haydar; Tevkelev</span></li>
+    </ol>
+    <p><b>Counter:</b> «Чингис же абсолютный лидер». However: даже он принял коллективный выбор Ögedei и раздавал улусы.</p>
+  </div></details>
+
+  <details open><summary>3. Что значило qazaq и как возникло ханство?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Сначала qazaq = «свободный/отделившийся», не нация. Ханство выросло, когда Giray и Jani-Beg ушли от Abu'l-Khayr и собрали людей.</div>
+    <p><b>Terms:</b> Qazaq / Qazaqlıq · Uzbek-Qazaq / Consolidation</p>
+    <p><b>Thesis:</b> “Qazaq” began as a political status of free secession; the polity formed when Jochid princes broke from Abu'l-Khayr under Moghul protection.</p>
+    <ol>
+      <li>Ways Khan «went out as a qazaq» — <span class="en">Haydar Ex.1</span></li>
+      <li>Giray &amp; Jani-Beg → Chu/Quzi Bashi; ~200,000 — <span class="en">Haydar Ex.2</span></li>
+      <li>После смерти Abu'l-Khayr хаос у шибанидов открыл окно — <span class="en">Mahmud ibn Wali</span></li>
+    </ol>
+    <p><b>Counter:</b> Haydar пишет «почти исчезли». However: это риторика/bias; Continuity есть.</p>
+  </div></details>
+
+  <details open><summary>4. Что нужно хану? Роль амиров/биев/старшин?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Хану нужны люди. Титул сам по себе мало значит. Амиры/бии/старшины решают, за кем идти.</div>
+    <p><b>Terms:</b> Khan / Amir · Willingness of followers / Starshina</p>
+    <p><b>Thesis:</b> A khan kept power through elite consent and generosity, not title alone; without amirs/biis/starshinas he became “khan in name”.</p>
+    <ol>
+      <li>Амиры могут свергнуть/восстановить хана — <span class="en">Haydar Ex.2</span></li>
+      <li>Tahir скупой → все уходят — <span class="en">Haydar Ex.4</span></li>
+      <li>1731: старшины сопротивляются, пока нет gifts — <span class="en">Tevkelev; Kirilov</span></li>
+    </ol>
+    <p><b>Counter:</b> Qasim/Ablai выглядят почти абсолютными. However: их сила = умение держать элиту, а не игнор элиты.</p>
+  </div></details>
+
+  <details open><summary>5. Присяга 1731 — добровольная сдача казахов?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Нет. Это личный ход ослабленного хана Младшего жуза за защиту. Россия потом прочитала как подданство всего народа.</div>
+    <p><b>Terms:</b> Subjecthood / Patronage · Oath / Gift-giving</p>
+    <p><b>Thesis:</b> The 1731 oath was less voluntary submission of the Qazaqs than a personal bid for Russian protection, reinterpreted as subjecthood.</p>
+    <ol>
+      <li>Хан один тайно просит помощь — <span class="en">Tevkelev 1731</span></li>
+      <li>~30 старшин уговаривают gifts; Bukenbai важен — <span class="en">Tevkelev 1731</span></li>
+      <li>Kirilov уже думает про форты и расширение — <span class="en">Kirilov 1734</span></li>
+    </ol>
+    <p><b>Counter:</b> Кто-то же присягнул. However: после подарков/угроз; значения присяги разные; реальный контроль шёл десятилетиями.</p>
+  </div></details>
+
+  <details open><summary>6. Как Россия после 1822 изменила управление?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Перешли от «править через ханов» к своей бюрократии: округа, приказы, меньше кочевой свободы, ханский титул убрали.</div>
+    <p><b>Terms:</b> Speransky Statute · Prikaz / Abolition of khan title</p>
+    <p><b>Thesis:</b> After 1822 Russia shifted from indirect patronage to direct colonial administration, replacing khanship with okrugs/prikazes and restricting mobility.</p>
+    <ol>
+      <li>Statute: aul→volost'→okrug — <span class="en">Speransky 1822</span></li>
+      <li>Kokchetau 1824 + протест Kasym против фортов/налогов — <span class="en">Kokchetau; Kasym 1824</span></li>
+      <li>Kenesary требует убрать prikazes/taxes — <span class="en">Kenesary letter 1838</span></li>
+    </ol>
+    <p><b>Counter:</b> Adat/biys же оставили. However: убрать ханский титул и ограничить mobility — это слом каркаса, не косметика.</p>
+  </div></details>
+
+  <details open><summary>7. Кенесары: нацосвобождение или возврат ханства?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой (курс/Sabol):</b> Скорее возврат ханской власти и защита пастбищ, чем современная национально-освободительная война. Героем нации его сделали потом.</div>
+    <p><b>Terms:</b> National-liberation movement · Zakat / Prikaz</p>
+    <p><b>Thesis:</b> Kenesary’s revolt is better understood as restoring Chinggisid khanship and pastures than as modern national liberation.</p>
+    <ol>
+      <li>Письма: титул, убрать prikazes/taxes, Ablai arrangements — <span class="en">Kenesary 1838/1845</span></li>
+      <li>Свой «госаппарат»: biis, decimal army, zakat — <span class="en">Zhemchuzhnikov; Sabol</span></li>
+      <li>Поддержка рваная; убит кыргызами 1847 — <span class="en">Sabol 2003</span></li>
+    </ol>
+    <p><b>Counter:</b> Bekmakhanov/память = национальный герой. However: это поздняя историография; тогдашние цели про хана и землю.</p>
+  </div></details>
+
+  <details open><summary>8. Как казахи строили отношения с Цин / баланс империй?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Играли в двух соседей. Писали Цину языком подчинения ради титула/защиты/торговли, параллельно держали Россию. Это гибкая дипломатия, не всегда полное рабство.</div>
+    <p><b>Terms:</b> Ejen–albatu · Qing titles / Waifan</p>
+    <p><b>Thesis:</b> Qazaq leaders used Qing albatu language and titles strategically to gain legitimacy and balance Russia, while Qing read stronger subordination.</p>
+    <ol>
+      <li>Ablai 1757: son/albatu — <span class="en">Ablai Memorial 1757</span></li>
+      <li>Двойная игра: Цин + Россия; отказ явиться на инаугурацию — <span class="en">Ablai-era letters</span></li>
+      <li>Dair 1781 продолжает линию Ablai — <span class="en">Dair 1781</span></li>
+    </ol>
+    <p><b>Counter:</b> Церемонии/заложники = настоящее подданство. However: Цин не управляла степью как обычной провинцией; язык лояльности = торг.</p>
+  </div></details>
+
+  <details open><summary>9. Что показывает дело Губайдуллы 1824?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> После 1822 Россия уже может запретить двойную игру. Хотел цинский титул — заставили отказаться и остаться только с царём.</div>
+    <p><b>Terms:</b> Agha-sultan · Qing han title / Statute 1822</p>
+    <p><b>Thesis:</b> The Ghubaydulla incident shows Russia closing Qazaq dual diplomacy: Qing titles became unacceptable under the new colonial order.</p>
+    <ol>
+      <li>Просил Qing han, потом отрёкся из-за oath to tsar — <span class="en">Ghubaydulla Letter 1824</span></li>
+      <li>Русское вмешательство / давление — <span class="en">Noda</span></li>
+      <li>Поворот: Россия монополизирует контроль над элитой — <span class="en">Noda; Statute context</span></li>
+    </ol>
+    <p><b>Counter:</b> Он сам по шариату не может служить двум. However: письмо под русским давлением; контекст Statute важнее «чистой теологии».</p>
+  </div></details>
+
+  <details open><summary>10. Ислам принесли Россия/татары или он был раньше?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Был раньше. При России ислам не «появился с нуля», а стал гуще: школы, мечети, книги, официальные имамы.</div>
+    <p><b>Terms:</b> Islamic transformation · OMSA / Maktab</p>
+    <p><b>Thesis:</b> Islam was an older Central Asian inheritance; under Russia it underwent institutional transformation through Qazaq demand and Muslim networks, not first conversion by Tatars.</p>
+    <ol>
+      <li>Старые корни: Golden Horde, Yasawi/khoja — <span class="en">Frank; lectures</span></li>
+      <li>OMSA, мечети, печать — <span class="en">Frank 2003</span></li>
+      <li>Школа в юрте, adat+sharia — <span class="en">Barangavi</span></li>
+    </ol>
+    <p><b>Counter:</b> Чиновники говорили «слабые мусульмане» / «татаризация». However: сами себе противоречили («фанатики»); это имперская тревога.</p>
+  </div></details>
+
+  <details open><summary>11. Было ли Казахское ханство «государством Вебера»?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Нет, не в веберовском смысле. Это гибкая кочевая polity: несколько центров, нет жёсткой монополии насилия и бюрократии как у gunpowder empires. Но это не значит «вообще не государство».</div>
+    <p><b>Terms:</b> Nomadic pastoralism · Polycentrism / Three Jüz</p>
+    <p><b>Thesis:</b> The Qazaq Khanate was a resilient non-Weberian polity: negotiated, mobile, and polycentric rather than a bureaucratic monopoly of violence.</p>
+    <ol>
+      <li>Трудно налогом и контролем накрыть кочевье — <span class="en">lecture</span></li>
+      <li>Несколько ханов/центров могут сосуществовать — <span class="en">lecture; Haydar</span></li>
+      <li>Сила бывает (Qasim), но последователи могут уйти — <span class="en">Haydar Ex.4</span></li>
+    </ol>
+    <p><b>Counter:</b> При Касыме очень похоже на сильное государство. However: state-like момент ≠ Weberian machine; после него всё осыпается.</p>
+  </div></details>
+
+  <details open><summary>12. Как давление джунгар повлияло на казахов?</summary>
+  <div class="body">
+    <div class="help"><b>Ответ одной фразой:</b> Джунгары били больно (особенно 1723–27), толкали к единству и к поиску внешней защиты (в т.ч. Россия). Когда Цин уничтожила джунгар, враг пропал — но появился новый имперский сосед.</div>
+    <p><b>Terms:</b> Junghars / Aqtaban Shubyryndy · Quriltai / Patronage</p>
+    <p><b>Thesis:</b> Junghar pressure devastated Qazaqs, pushed temporary unity and external alliances, and after the Junghars’ fall opened the Qing frontier.</p>
+    <ol>
+      <li>Aqtaban Shubyryndy = катастрофа — <span class="en">lecture</span></li>
+      <li>Попытки общего отпора (qurultai / pooled warriors) — <span class="en">lecture</span></li>
+      <li>Abu'l-Khayr ищет русскую защиту partly из-за угроз; потом Ablai → Qing after 1755–59 — <span class="en">Tevkelev; Ablai 1757</span></li>
+    </ol>
+    <p><b>Counter:</b> Джунгарская централизация сильнее казахской. However: она же помогла им потом развалиться; казахская гибкость помогла выжить.</p>
+  </div></details>
+</section>
+
+<section id="answers">
+  <h2>7. Длинные ответы (если нужно расписать подробнее)</h2>
+  <p>Ниже те же темы развёрнуто. На экзамене обычно хватает коротких карточек сверху. Синие блоки — чтобы понимать смысл.</p>
+
+  <details open><summary>1) Chinggisid succession / collective rule</summary>
+  <div class="body">
+    <p class="muted small">Бери terms: Quriltai, Yasa / Ulus / Chinggisid system</p>
+    <p><b>Thesis:</b> Succession in the Chinggisid system was negotiated among princes and elders through lineage and ability, not automatic father-to-eldest-son inheritance.</p>
+    <div class="help">Главная мысль: наследника не назначали как в простой сказке «умер отец — старший сын король». Спорили, выбирали, делились.</div>
+
+    <div class="arg">
+      <b>Arg 1</b><br>
+      Claim: Succession was debated in council, not simply commanded.<br>
+      Evidence: Yisui Qatun raises the heir question; Jochi and Chaghadai quarrel; they then support Ögedei.<br>
+      Source: Secret History of the Mongols (mid-13th c.).<br>
+      Link: legitimacy came through consultation (Chinggisid legitimacy).
+      <div class="help">Факт: даже перед большой войной семью заставили обсудить наследника. Значит, это политический процесс.</div>
+    </div>
+    <div class="arg">
+      <b>Arg 2</b><br>
+      Claim: Ability mattered together with birth.<br>
+      Evidence: Ögedei is called steady/reliable; Juvayni gives sons different jobs (hunt, law, counsel, army).<br>
+      Source: Secret History; Juvayni.<br>
+      Link: character + function inside the golden clan.
+      <div class="help">Недостаточно просто родиться. Нужно выглядеть годным править.</div>
+    </div>
+    <div class="arg">
+      <b>Arg 3</b><br>
+      Claim: Power was shared through appanages.<br>
+      Evidence: sons receive territories; authority is shared across the family; unity parables warn against splitting.<br>
+      Source: Juvayni, History of the World Conqueror.<br>
+      Link: collective rule also plants later fragmentation.
+      <div class="help">Власть раздают кусками. Это держит семью у руля, но потом куски начинают жить отдельно.</div>
+    </div>
+    <div class="arg counter">
+      <b>Counter:</b> Someone can say birth order still mattered, because Jochi’s legitimacy was attacked and elder-wife children ranked higher.<br>
+      <b>However:</b> those claims were weighed against consensus and ability; Ögedei, not eldest Jochi, was chosen.
+      <div class="help">Да, происхождение важно. Но одного старшинства не хватило: выбрали другого.</div>
+    </div>
+  </div></details>
+
+  <details><summary>2) Origins of Qazaq polity</summary>
+  <div class="body">
+    <p><b>Thesis:</b> The Qazaq polity formed in the mid-15th century as a political breakaway of Jochid princes from Abu'l-Khayr under Moghul protection, so “qazaq” first meant a free/separated status, not a modern ethnic nation.</p>
+    <div class="help">Казахская общность начинается как «ушли и стали сами по себе», а не как готовая нация из учебника XIX века.</div>
+    <div class="arg"><b>1.</b> Claim: Qazaq was a political status.<br>Evidence: Ways Khan “went out as a qazaq”; later the name stuck to Giray and Jani-Beg’s wandering followers.<br>Source: Haydar Dughlat, Excerpts 1 and 4 (1546).<br>Link: identity from secession.<div class="help">Слово сначала про образ жизни/статус вне старой власти.</div></div>
+    <div class="arg"><b>2.</b> Claim: Breakaway needed pressure + shelter.<br>Evidence: Abu'l-Khayr harassed rival princes; Esen-Buqa gave Chu and Quzi Bashi; after Abu'l-Khayr died many joined them (~200,000).<br>Source: Haydar Excerpt 2; Mahmud ibn Wali.<br>Link: formation mechanism.<div class="help">Их выдавили, им дали землю-убежище, потом к ним пошли люди.</div></div>
+    <div class="arg"><b>3.</b> Claim: Early polity was collective and fragile.<br>Evidence: many Jochid princes around Qasim; after him conflict; Tahir’s stinginess makes followers leave.<br>Source: Haydar Excerpts 4–5.<br>Link: followers make the khan.<div class="help">Если лидер жадный/слабый — люди просто уходят.</div></div>
+    <div class="arg counter"><b>Counter:</b> Haydar says almost “no trace” of Qazaqs remained.<br><b>However:</b> this is rhetorical and biased; other parts and later history show continuity.<div class="help">Хайдар любит красиво сгущать. Не покупайся на «исчезли полностью».</div></div>
+  </div></details>
+
+  <details><summary>3) Khan needs elites</summary>
+  <div class="body">
+    <p><b>Thesis:</b> A khan kept power less by title alone than by elite consent and the ability to reward followers; without amirs/biis/starshinas he could become only a “khan in name”.</p>
+    <div class="help">Титул без людей — бумажка. Нужны сторонники.</div>
+    <div class="arg"><b>1.</b> Claim: Amirs can break a khan.<br>Evidence: Esen-Buqa favors one amir; other amirs rebel and kill him; later Sayyid-Ali helps restore the khan.<br>Source: Haydar Excerpt 2.<br>Link: khan–elite relations.<div class="help">Обидел элиту — получил бунт.</div></div>
+    <div class="arg"><b>2.</b> Claim: Generosity holds the following.<br>Evidence: Tahir will not provide for people; huge following deserts him.<br>Source: Haydar Excerpt 4.<br>Link: willingness of followers.<div class="help">Скупой хан остаётся почти один.</div></div>
+    <div class="arg"><b>3.</b> Claim: Same logic appears in 1731.<br>Evidence: Abu'l-Khayr seeks Russia alone; starshinas resist until gifts; Kirilov says khans are weakly obeyed.<br>Source: Tevkelev 1731; Kirilov 1734.<br>Link: decentralized steppe politics.<div class="help">Даже в XVIII веке хан не включает народ кнопкой.</div></div>
+    <div class="arg counter"><b>Counter:</b> Strong leaders like Qasim or Ablai look almost absolute.<br><b>However:</b> their strength came from managing many princes, gifts, ceremonies and recognition — still elite politics.<div class="help">Сильный хан = хороший менеджер элиты, не человек без ограничений.</div></div>
+  </div></details>
+
+  <details><summary>4) 1731 voluntary submission?</summary>
+  <div class="body">
+    <p><b>Thesis:</b> The 1731 oath was less a voluntary submission of the Qazaqs than a personal bid by a weakened Junior Horde khan for Russian protection, which Russia reinterpreted as subjecthood.</p>
+    <div class="help">Не путай «хан попросил защиту» и «весь народ добровольно стал российской губернией».</div>
+    <div class="arg"><b>1.</b> Claim: The khan acted for his own survival and power.<br>Evidence: secret meeting; pressure from Jungars and neighbors; wants hereditary power like Ayuka.<br>Source: Tevkelev, 1731.<br>Link: personal patronage politics.<div class="help">Ему нужна крыша и усиление своей власти дома.</div></div>
+    <div class="arg"><b>2.</b> Claim: Elite consent was bought and contested.<br>Evidence: many starshinas resist; gifts for about 30 chiefs; Bukenbai becomes key supporter.<br>Source: Tevkelev, 1731.<br>Link: not collective national will.<div class="help">Людей уговаривали. Значит, согласия с самого начала не было.</div></div>
+    <div class="arg"><b>3.</b> Claim: Russia had its own expansion reading.<br>Evidence: calls khans weak “in name”; wants fort at Or–Yaik; talks of routes toward India/Badakhshan.<br>Source: Kirilov, 1734.<br>Link: imperial encounter.<div class="help">Россия смотрит на это как на вход в большой имперский проект.</div></div>
+    <div class="arg counter"><b>Counter:</b> Some elites did swear, so maybe it was real subjecthood.<br><b>However:</b> swearing after gifts/threats, plus different meanings of the oath, and slow real control later, weaken the “voluntary nation” story.<div class="help">Кто-то присягнул — да. Весь народ добровольно и одинаково понял «подданство» — нет.</div></div>
+  </div></details>
+
+  <details><summary>5) Russia after 1822</summary>
+  <div class="body">
+    <p><b>Thesis:</b> After 1822 Russia shifted from ruling through khans toward direct colonial administration by creating okrugs/prikazes, restricting mobility, and abolishing the khan title — and this produced deep resistance.</p>
+    <div class="help">Империя перестала в основном «дружить с ханами» и начала сама расставлять свою администрацию.</div>
+    <div class="arg"><b>1.</b> Claim: The Statute rebuilt politics on territorial offices.<br>Evidence: Omsk oblast; aul–volost'–okrug ladder; agha-sultans under Russian confirmation.<br>Source: Speransky Statute, 1822.<br>Link: colonial administration.<div class="help">Новая схема власти сверху вниз.</div></div>
+    <div class="arg"><b>2.</b> Claim: Local people were pulled into colonial ritual and still resisted.<br>Evidence: Kokchetau opening 1824; Ghubaydulla as senior sultan; households underreported; Kasym protests forts/taxes/pastures.<br>Source: Kokchetau accounts; Kasym, 1824.<br>Link: contested incorporation.<div class="help">Церемонии красивые, но на земле уже конфликт.</div></div>
+    <div class="arg"><b>3.</b> Claim: These reforms shape Kenesary’s demands.<br>Evidence: 1838 letter asks to abolish prikazes/taxes and return to Ablai-era arrangements; he attacks the prikaz system.<br>Source: Kenesary’s Letter to Nicholas I, 1838.<br>Link: resistance to direct rule.<div class="help">Восстание растет из этих порядков.</div></div>
+    <div class="arg counter"><b>Counter:</b> Maybe change was soft because adat and biys remained locally.<br><b>However:</b> ending khanship and limiting mobility were structural blows, not small edits.<div class="help">Оставили кусочки старого быта, но сломали каркас власти.</div></div>
+  </div></details>
+
+  <details><summary>6) Kenesary</summary>
+  <div class="body">
+    <p><b>Thesis:</b> Kenesary’s revolt is better understood as an attempt to restore Chinggisid khan authority and protect pastures than as a modern national-liberation war, because his demands and support patterns look political and fragmented.</p>
+    <div class="help">Он ближе к «верните ханскую власть и землю», чем к современному национальному движению XIX–XX века.</div>
+    <div class="arg"><b>1.</b> Claim: His letters ask for khanship terms, not a modern nation-state program.<br>Evidence: abolish prikazes and taxes; return to Ablai arrangements; later bargains over specific lands for loyalty.<br>Source: Kenesary letters, 1838 and 1845.<br>Link: restore khanship.<div class="help">Читай, чего он просит. Там титул, приказы, пастбища.</div></div>
+    <div class="arg"><b>2.</b> Claim: He built a steppe confederation toolkit.<br>Evidence: council of sultans/biis; military organization; zakat taxation; mobility advantage noted by Russians.<br>Source: Zhemchuzhnikov, 1844; Sabol, 2003.<br>Link: state-building in steppe forms.<div class="help">Он собирает свою власть старыми и исламскими инструментами.</div></div>
+    <div class="arg"><b>3.</b> Claim: Support never equaled “the whole nation”.<br>Evidence: shifting loyalties; very different troop estimates; some Qazaqs sought Russian protection from his raids; killed by Kirghiz in 1847.<br>Source: Sabol, 2003; Russian reports.<br>Link: fragmented resistance.<div class="help">Не все казахи были «за». Были свои и чужие.</div></div>
+    <div class="arg counter"><b>Counter:</b> Later Kazakh/Soviet memory presents him as national liberator (Bekmakhanov tradition).<br><b>However:</b> that is later historiography and identity-making; contemporary evidence fits khanship/pastures better (Sabol).<div class="help">Память потомков ≠ точная копия целей 1830–40-х.</div></div>
+  </div></details>
+
+  <details><summary>7) Qing diplomacy</summary>
+  <div class="body">
+    <p><b>Thesis:</b> Qazaq leaders used Qing titles and albatu language strategically to gain legitimacy and balance Russia, while the Qing read stronger subordination — until Russia blocked this dual game.</p>
+    <div class="help">Это политика «дружить с двумя сильными соседями», пока получается.</div>
+    <div class="arg"><b>1.</b> Claim: Ablai enters Qing orbit after Junghar collapse.<br>Evidence: 1757 memorial uses son/albatu language and sends envoys.<br>Source: Ablai’s Memorial to Qianlong, 1757.<br>Link: flexible tributary diplomacy.<div class="help">После падения джунгар надо срочно выстраивать отношения с Цин.</div></div>
+    <div class="arg"><b>2.</b> Claim: Dual recognition protected autonomy.<br>Evidence: Qing investiture plus later dealings with Russia; refusal to appear for inauguration signals limits; Dair continues Qing tie after Ablai.<br>Source: Ablai-era correspondence; Dair, 1781.<br>Link: multi-vector politics.<div class="help">Признать можно, полностью подчиниться — не обязательно.</div></div>
+    <div class="arg"><b>3.</b> Claim: By 1824 the dual option collapses.<br>Evidence: Ghubaydulla renounces Qing title after Russian pressure and cites oath to the tsar.<br>Source: Ghubaydulla’s Letter, 1824; Noda.<br>Link: Russian dominance.<div class="help">Россия закрывает лазейку.</div></div>
+    <div class="arg counter"><b>Counter:</b> Qing ceremonies and hostages look like real subjecthood.<br><b>However:</b> Qing still did not run the Qazaq steppe like an ordinary province; language of loyalty was also a bargaining tool.<div class="help">Ритуал подчинения ≠ полное повседневное управление.</div></div>
+  </div></details>
+
+  <details><summary>8) Islam</summary>
+  <div class="body">
+    <p><b>Thesis:</b> Islam on the steppe was not simply introduced by Russian rule or Tatar missionaries; it was an older Central Asian inheritance that Qazaqs expanded through schools, networks, and institutions that also grew under the empire.</p>
+    <div class="help">Не было пустой степи, куда внезапно «привезли ислам». Он уже был, а потом стал гуще и оформленнее.</div>
+    <div class="arg"><b>1.</b> Claim: Muslim structures existed long before Catherine’s policy.<br>Evidence: Golden Horde Islamization; Yasawi/khoja traditions; adat and sharia side by side.<br>Source: Frank; course lectures.<br>Link: Central Asian inheritance.<div class="help">Корни старые.</div></div>
+    <div class="arg"><b>2.</b> Claim: Russian rule densified Islamic institutions.<br>Evidence: mosques from the 1780s; OMSA 1788; printing; madrasas; later 1868 restrictions.<br>Source: Allen Frank, 2003.<br>Link: Islamic transformation under empire.<div class="help">Империя и помогала оформить, и потом пугалась «татаризации».</div></div>
+    <div class="arg"><b>3.</b> Claim: Nomads practiced serious everyday Islam.<br>Evidence: yurt maktab; girls studying; legal debate mixing adat and Hanafi law.<br>Source: Barangavi, A Month among the Qazaqs.<br>Link: against the “weak Muslim nomad” stereotype.<div class="help">Школа в юрте — мощный аргумент.</div></div>
+    <div class="arg counter"><b>Counter:</b> Officials said Qazaqs were “weak Muslims” and blamed Tatar influence.<br><b>However:</b> officials also feared “fanaticism”; the contradiction shows colonial anxiety more than careful description (Frank).<div class="help">Имперские ярлыки часто про контроль, не про точную социологию.</div></div>
+  </div></details>
+
+  <details><summary>9) Weberian state? / Jungars</summary>
+  <div class="body">
+    <p><b>Thesis:</b> The Qazaq Khanate was a resilient non-Weberian polity: mobile, polycentric, and negotiated. That helped survival under Junghar pressure, but made it harder to match gunpowder empires’ bureaucracy.</p>
+    <div class="help">Это не классическое европейское «государство с монополией насилия и жёсткой бюрократией». Но и не хаос.</div>
+    <div class="arg"><b>1.</b> Claim: Steppe ecology blocked full Weberian control.<br>Evidence: hard to tax mobile herds; several leaders could coexist; borders were fuzzy.<br>Source: lecture synthesis.<br>Link: nomadic politics.<div class="help">Трудно посчитать и поймать весь народ, который двигается.</div></div>
+    <div class="arg"><b>2.</b> Claim: Junghars show another model — more centralized — and it also breaks.<br>Evidence: councils, script, army modernization; later succession crisis; Qing destruction.<br>Source: Junghar lectures.<br>Link: centralization has costs too.<div class="help">Жёсткая централизация дала силу, потом помогла развалиться.</div></div>
+    <div class="arg"><b>3.</b> Claim: Qazaqs survived through temporary unity and flexibility.<br>Evidence: common qurultai response; pooling warriors; surviving Aqtaban trauma.<br>Source: lecture.<br>Link: identity under pressure.<div class="help">В беде умели собираться, потом снова жить гибко.</div></div>
+    <div class="arg counter"><b>Counter:</b> Under Qasim the polity looks very strong and “state-like”.<br><b>However:</b> state-like moments are not the same as Weberian monopoly; after Qasim the following can melt away (Haydar).<div class="help">Быть сильным какое-то время ≠ стать бюрократической империей.</div></div>
+  </div></details>
+</section>
+
+<section id="sources">
+  <h2>8. Источники простыми словами</h2>
+  <div class="box soft">
+    <b>Правило цитирования:</b> не пиши название сборника. Пиши документ/автора и год.<br>
+    Плохо: <i>Kenesary reader</i>. Хорошо: <i>Kenesary’s Letter to Nicholas I (1838)</i>.
+  </div>
+  <div class="help">
+    <b>Как выбирать источник:</b><br>
+    Нужен факт из XIII в. про наследника → Secret History / Juvayni.<br>
+    Нужен факт про рождение казахов → Haydar (+ Mahmud для контраста).<br>
+    Нужен 1731 → Tevkelev (+ Kirilov).<br>
+    Нужен 1822/Кенесары → Statute, письма Kenesary, Sabol.<br>
+    Нужен Цин → Ablai / Ghubaydulla / Noda.<br>
+    Нужен ислам → Frank / Barangavi.
+  </div>
+
+  <details><summary>Secret History of the Mongols</summary>
+  <div class="body">
+    <p><b>Что это:</b> монгольский рассказ про Чингиса и его дом.</p>
+    <p><b>Зачем тебе:</b> спор про наследника, курултайная логика.</p>
+    <p><b>Минус:</b> написано так, чтобы оправдать дом Ögedei.</p>
+    <div class="help">Это «семейная сага» победителей. Много правды про политику, но угол зрения свой. Если используешь — можно одной фразой сказать: composed under Ögedei, so biased toward him.</div>
+  </div></details>
+
+  <details><summary>Juvayni</summary>
+  <div class="body">
+    <p><b>Что это:</b> персидский чиновник на службе монголов объясняет их власть мусульманам.</p>
+    <p><b>Зачем:</b> Yasa, сыновья, дележ улусов, «справедливость» монголов.</p>
+    <p><b>Минус:</b> хочет убедить, поэтому гармонию приукрашивает.</p>
+    <div class="help">Хорош для legitimacy и ulus. Плох, если тебе нужна семейная ссора — там её сглаживают. Поэтому его и Secret History часто сталкивают.</div>
+  </div></details>
+
+  <details><summary>Haydar Dughlat (1546)</summary>
+  <div class="body">
+    <p><b>Что это:</b> могольский амир пишет историю своего мира.</p>
+    <p><b>Зачем:</b> значение qazaq; Giray/Jani-Beg; Касым; хан и элита.</p>
+    <p><b>Минус:</b> не любит узбеков, любит числа-преувеличения, иногда сам себе противоречит.</p>
+    <div class="help">Главный ранний источник по казахам, потому что сами казахи тогда почти не оставили таких историй. Всегда лучше писать Excerpt 1/2/4..., не просто «Haydar».</div>
+  </div></details>
+
+  <details><summary>Mahmud ibn Wali</summary>
+  <div class="body">
+    <p><b>Что это:</b> более поздний взгляд со стороны шибанидов/узбеков.</p>
+    <p><b>Зачем:</b> хаос после Abu'l-Khayr; контраст к Haydar.</p>
+    <p><b>Минус:</b> поздно написано, тоже приукрашивает «своих».</p>
+    <div class="help">Бери его, когда надо сказать: «не только могольская версия существует».</div>
+  </div></details>
+
+  <details><summary>Tevkelev (1731) и Kirilov (1734)</summary>
+  <div class="body">
+    <p><b>Tevkelev:</b> как уговаривали присягу, подарки, сопротивление старшин.</p>
+    <p><b>Kirilov:</b> зачем России форты, торговля, «ханы только по имени».</p>
+    <div class="help">Вместе дают картинку: внутри степи нет единого согласия, снаружи у России уже большой имперский план. Tevkelev = сцена на месте. Kirilov = зачем это империи.</div>
+  </div></details>
+
+  <details><summary>Speransky 1822 / Kenesary letters / Qing letters</summary>
+  <div class="body">
+    <p><b>Statute:</b> новые правила управления.</p>
+    <p><b>Kenesary letters:</b> чего он сам просил.</p>
+    <p><b>Ablai / Dair / Ghubaydulla:</b> как говорили с Цином.</p>
+    <div class="help">Если вопрос про цели Кенесары — сначала его письма, потом уже Sabol. Если вопрос про Цин — сначала Ablai/Ghubaydulla, потом Noda.</div>
+  </div></details>
+
+  <details><summary>Sabol / Frank / Noda / Barangavi</summary>
+  <div class="body">
+    <p><b>Sabol:</b> Кенесары не надо автоматически звать национально-освободительным.</p>
+    <p><b>Frank:</b> исламская трансформация, не «первое обращение».</p>
+    <p><b>Noda:</b> титулы Цин и дело Губайдуллы.</p>
+    <p><b>Barangavi:</b> живой ислам в кочевой жизни, школа в юрте.</p>
+    <div class="help">Secondary source = историк позже разбирает. Primary = участник/современник. На экзамене и то и то можно, но называй честно.</div>
+  </div></details>
+</section>
+
+<section id="pairs">
+  <h2>9. Какие источники сталкивать в Counter</h2>
+  <div class="help">
+    Сильное возражение часто строится так: «этот источник говорит одно, другой — другое, потому что у авторов разные интересы».
+    Не надо писать «некоторые думают иначе». Назови конкретную пару.
+  </div>
+  <table>
+    <tr><th>Возьми</th><th>Столкни с</th><th>Почему</th></tr>
+    <tr><td>Secret History</td><td>Juvayni</td><td>ссора семьи vs красивая гармония</td></tr>
+    <tr><td>Haydar</td><td>Mahmud ibn Wali</td><td>могольский vs шибанидский взгляд</td></tr>
+    <tr><td>Tevkelev</td><td>Kirilov / Sabol</td><td>сцена на месте vs имперский план / переоценка</td></tr>
+    <tr><td>Speransky Statute</td><td>Kasym protest</td><td>«подарок порядка» vs боль людей</td></tr>
+    <tr><td>Kenesary letters</td><td>Russian officials / Sabol</td><td>его слова vs ярлык разбойника / историография</td></tr>
+    <tr><td>Sabol</td><td>Bekmakhanov tradition</td><td>критика нации vs национальный герой</td></tr>
+    <tr><td>Frank</td><td>Barangavi</td><td>большая теория + живой пример</td></tr>
+  </table>
+  <div class="help">
+    <b>Мини-пример counter:</b> «A critic could use Bekmakhanov’s national-liberation view. However, Kenesary’s own letters ask for khanship, prikaz abolition and pastures (1838/1845), which fits Sabol better.»
+  </div>
+</section>
+
+<section id="facts">
+  <h2>10. Факты, которые просто выучить</h2>
+  <div class="help">Это «быстрые пули». Если времени мало — выучи хотя бы их. Каждая пуля уже почти evidence для аргумента.</div>
+  <ul>
+    <li>Ögedei выбран после семейного конфликта.</li>
+    <li>Giray и Jani-Beg уходят около 1465–66; получают Chu / Quzi Bashi.</li>
+    <li>Haydar: ~200,000; Касым очень силён; числа часто преувеличены.</li>
+    <li>1731: Abu'l-Khayr + Tevkelev; подарки примерно 30 старшинам; Букенбай важен.</li>
+    <li>1734: Kirilov хочет крепость Or–Yaik и пути на юг.</li>
+    <li>1757: Ablai пишет Цин языком albatu.</li>
+    <li>1822: Speransky Statute; 1824: ханский титул убирают; дело Губайдуллы.</li>
+    <li>Kenesary: 1837–47; письмо 1838; амнистии 1841 и 1844; убит кыргызами в 1847.</li>
+    <li>OMSA с 1788; в 1868 казахов сильно ограничивают в этой системе.</li>
+    <li>Barangavi видит школу в юрте и спор adat/sharia.</li>
+  </ul>
+</section>
+
+<section id="vocab">
+  <h2>11. Словарь: English → простыми словами</h2>
+  <div class="grid grid-2">
+    <div class="box small">
+      <p><span class="en">legitimacy</span> — люди считают, что власть законная</p>
+      <p><span class="en">authority</span> — возможность/право командовать</p>
+      <p><span class="en">succession</span> — кто будет следующим правителем</p>
+      <p><span class="en">primogeniture</span> — власть просто старшему сыну</p>
+      <p><span class="en">fragmentation</span> — распад на куски</p>
+      <p><span class="en">secession</span> — откол, уход</p>
+      <p><span class="en">consolidation</span> — собирание силы в одни руки</p>
+      <p><span class="en">subjecthood</span> — статус подданного</p>
+      <p><span class="en">patronage</span> — «я тебя крышую, ты мне лоялен»</p>
+      <p><span class="en">oath of allegiance</span> — клятва верности</p>
+      <p><span class="en">evidence</span> — конкретный факт-доказательство</p>
+      <p><span class="en">claim</span> — утверждение в аргументе</p>
+      <p><span class="en">source</span> — откуда факт</p>
+      <p><span class="en">counterargument</span> — сильное возражение</p>
+    </div>
+    <div class="box small">
+      <p><span class="en">indirect rule</span> — править через местных лидеров</p>
+      <p><span class="en">direct rule</span> — ставить свою администрацию напрямую</p>
+      <p><span class="en">colonial administration</span> — имперское управление колонией/степью</p>
+      <p><span class="en">mobility</span> — возможность кочевать/двигаться</p>
+      <p><span class="en">pastures</span> — пастбища</p>
+      <p><span class="en">imperial encounter</span> — встреча с империей</p>
+      <p><span class="en">tributary</span> — связь через дары/признание старшего</p>
+      <p><span class="en">investiture</span> — пожалование/утверждение титула</p>
+      <p><span class="en">historiography</span> — как историки потом объясняют событие</p>
+      <p><span class="en">anachronism</span> — перенос поздних слов в раннее время</p>
+      <p><span class="en">bias</span> — перекос, предвзятость</p>
+      <p><span class="en">audience</span> — для кого текст написан</p>
+      <p><span class="en">to what extent</span> — в какой степени</p>
+      <p><span class="en">print-nationalism</span> — чувство нации через газеты/книги позже</p>
+    </div>
+  </div>
+
+  <h3>Перед сдачей проверь</h3>
+  <ul>
+    <li>Я выбрал 2 вопроса, где есть факты и источники</li>
+    <li>В терминах есть что / когда / где / зачем</li>
+    <li>В thesis есть не только ответ, но и потому что</li>
+    <li>В каждом аргументе 4 части: claim, evidence, source, link</li>
+    <li>В counter есть источник и «however»</li>
+    <li>Я не написал reader и не сказал «Kazakh nation» про ранние века</li>
+  </ul>
+</section>
+
+</div>
+
+<script>
+(function(){
+  const input=document.getElementById('q');
+  const root=document.getElementById('content');
+  function clearMarks(node){
+    node.querySelectorAll('mark.hl').forEach(m=>{
+      const p=m.parentNode; p.replaceChild(document.createTextNode(m.textContent),m); p.normalize();
+    });
+  }
+  function markText(node,term){
+    const re=new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig');
+    const walk=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+    const nodes=[]; while(walk.nextNode()) nodes.push(walk.currentNode);
+    nodes.forEach(tn=>{
+      if(!tn.parentElement||['SCRIPT','STYLE'].includes(tn.parentElement.tagName)) return;
+      const text=tn.nodeValue; if(!re.test(text)) return; re.lastIndex=0;
+      const frag=document.createDocumentFragment(); let last=0,m;
+      while((m=re.exec(text))){
+        frag.appendChild(document.createTextNode(text.slice(last,m.index)));
+        const mark=document.createElement('mark'); mark.className='hl'; mark.textContent=m[0]; frag.appendChild(mark);
+        last=m.index+m[0].length;
+      }
+      frag.appendChild(document.createTextNode(text.slice(last)));
+      tn.parentNode.replaceChild(frag,tn);
+    });
+  }
+  let t;
+  input.addEventListener('input',()=>{
+    clearTimeout(t);
+    t=setTimeout(()=>{
+      clearMarks(root);
+      const term=input.value.trim();
+      document.querySelectorAll('details').forEach(d=>d.style.display='');
+      if(!term) return;
+      const low=term.toLowerCase();
+      document.querySelectorAll('details').forEach(d=>{
+        const hit=d.textContent.toLowerCase().includes(low);
+        d.style.display=hit?'':'none';
+        if(hit) d.open=true;
+      });
+      markText(root,term);
+    },140);
+  });
+})();
+</script>
+</body>
+</html>

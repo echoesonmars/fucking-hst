@@ -10,13 +10,20 @@
 html { scroll-behavior: smooth; }
 body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--ink); background:var(--bg); }
 .wrap { width:min(100% - 1rem, 860px); margin:0 auto; padding:1rem 0 3rem; }
-header { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--line); padding:.55rem 0; }
+header { position:static; background:#fff; border-bottom:1px solid var(--line); padding:.45rem 0 .55rem; }
 header .row { display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; }
 header strong { font-size:.95rem; }
 header input { flex:1; min-width:140px; border:1px solid var(--line); padding:.4rem .55rem; font:inherit; }
 nav { display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.4rem; }
 nav a { color:var(--ink); text-decoration:none; font-size:.78rem; border:1px solid var(--line); padding:.2rem .45rem; }
 nav a:hover { background:var(--soft); }
+.nav-box { border:0; margin:0; }
+.nav-box > summary {
+  list-style:none; cursor:pointer; font-weight:700; font-size:.85rem;
+  padding:.35rem 0; background:transparent; border:0;
+}
+.nav-box > summary::-webkit-details-marker { display:none; }
+.nav-box[open] > summary { margin-bottom:.25rem; }
 h1 { font-size:1.35rem; margin:1rem 0 .4rem; }
 h2 { font-size:1.15rem; margin:1.6rem 0 .5rem; padding-bottom:.25rem; border-bottom:2px solid #111; }
 h3 { font-size:1.02rem; margin:1.1rem 0 .35rem; }
@@ -24,7 +31,7 @@ p { margin:.4rem 0; }
 .muted { color:var(--muted); }
 .small { font-size:.92rem; }
 .en { font-weight:800; }
-section { scroll-margin-top:70px; margin-bottom:1.1rem; }
+section { scroll-margin-top:12px; margin-bottom:1.1rem; }
 .box { border:1px solid var(--line); padding:.7rem .8rem; margin:.5rem 0; }
 .soft { background:var(--soft); }
 .help {
@@ -55,14 +62,24 @@ li { margin:.25rem 0; }
 .grid { display:grid; gap:.5rem; }
 @media (min-width:720px){ .grid-2{ grid-template-columns:1fr 1fr; } }
 .hl { background:#ff0; }
+@media (min-width:721px){
+  .nav-box { border:0; }
+  .nav-box > summary { display:none; }
+  .nav-box nav { display:flex !important; margin-top:.4rem; }
+}
+@media (max-width:720px){
+  header { position:static; padding:.35rem 0 .45rem; }
+  header strong { font-size:.85rem; }
+  .nav-box nav { display:none; }
+  .nav-box[open] nav { display:flex; margin-top:.25rem; }
+}
 @media (max-width:640px){
   body{ font-size:15px; }
   .wrap{ width:min(100% - .75rem, 860px); }
   table{ display:block; overflow-x:auto; }
 }
 @media print{
-  header{ position:static; }
-  header input,nav{ display:none; }
+  header{ display:none; }
   details{ border:0; break-inside:avoid; }
   summary{ display:none; }
   details .body{ display:block !important; padding:0; }
@@ -73,23 +90,29 @@ li { margin:.25rem 0; }
 <header>
   <div class="wrap" style="padding:0;">
     <div class="row">
-      <strong>HST 100 · простая объяснялка</strong>
+      <strong>HST 100</strong>
       <input id="q" type="search" placeholder="поиск…" />
     </div>
-    <nav>
-      <a href="#pipe">План</a>
-      <a href="#how">Как писать</a>
-      <a href="#short">Короткие решения</a>
-      <a href="#themes">Темы</a>
-      <a href="#mistakes">Ошибки</a>
-      <a href="#dates">Даты</a>
-      <a href="#terms">Слова</a>
-      <a href="#answers">Длинные ответы</a>
-      <a href="#sources">Источники</a>
-      <a href="#pairs">Пары</a>
-      <a href="#facts">Факты</a>
-      <a href="#vocab">Перевод</a>
-    </nav>
+    <details class="nav-box">
+      <summary>Меню разделов ▾</summary>
+      <nav>
+        <a href="#pipe">План</a>
+        <a href="#how">Как писать</a>
+        <a href="#short">Короткие решения</a>
+        <a href="#sample">Образец 50/50</a>
+        <a href="#phrases">Фразы</a>
+        <a href="#themes">Темы</a>
+        <a href="#mistakes">Ошибки</a>
+        <a href="#dates">Даты</a>
+        <a href="#terms">Слова</a>
+        <a href="#extra">Ещё термины</a>
+        <a href="#answers">Длинные ответы</a>
+        <a href="#sources">Источники</a>
+        <a href="#pairs">Пары</a>
+        <a href="#facts">Факты</a>
+        <a href="#vocab">Перевод</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -679,6 +702,134 @@ li { margin:.25rem 0; }
       <li>Abu'l-Khayr ищет русскую защиту partly из-за угроз; потом Ablai → Qing after 1755–59 — <span class="en">Tevkelev; Ablai 1757</span></li>
     </ol>
     <p><b>Counter:</b> Джунгарская централизация сильнее казахской. However: она же помогла им потом развалиться; казахская гибкость помогла выжить.</p>
+  </div>  </details>
+</section>
+
+<section id="sample">
+  <h2>6b. Образец полного бланка на 50/50</h2>
+  <div class="help">
+    Это как должен выглядеть <b>один</b> вопрос целиком. Списывай структуру 1 в 1. Вопрос-пример про 1731.
+  </div>
+  <div class="box soft small">
+    <b>Question:</b> To what extent did Abu'l-Khayr's 1731 oath represent a voluntary submission of the Qazaqs to Russia?<br>
+    Underlined terms: <span class="en">starshina</span>, <span class="en">poddanstvo</span>
+  </div>
+
+  <div class="arg">
+    <b>A. Terms (8)</b><br>
+    <span class="en">Starshina</span> (Russian “elder”): non-Chinggisid tribal chiefs/elders of the Qazaq steppe in 18th-century Russian sources (Tevkelev, 1731). Significance: they held real power over followers; their refusal shows khans ruled by consent and “submission” was contested.<br><br>
+    <span class="en">Poddanstvo</span> (subjecthood): Russian legal status of obedience and oath to the sovereign, with duties like yasak and hostages. Significance: Russians read the 1731 oath as poddanstvo while Qazaqs saw protection — central to the colonization debate.
+    <div class="help">Термин = что + когда/где + зачем важно. Два термина = 8 баллов.</div>
+  </div>
+
+  <div class="arg">
+    <b>B. Thesis (10)</b><br>
+    Abu'l-Khayr's 1731 oath was a personal diplomatic bid by a weakened khan to obtain protection against the Junghars, Kalmyks and Bashkirs, not a voluntary submission of the Qazaqs as a whole, and Russia later interpreted it as incorporation.
+    <div class="help">Одна ясная мысль: не весь народ сдался, а хан искал защиту; Россия перечитала это как подданство.</div>
+  </div>
+
+  <div class="arg">
+    <b>C1 (8)</b><br>
+    Claim: The oath was his personal decision.<br>
+    Evidence: He secretly told Tevkelev that he alone wanted subjecthood and had told Moscow all khans agreed so Russia would send an envoy.<br>
+    Source: Tevkelev, Account (1731).<br>
+    Link: a unilateral act cannot be collective submission (theme: khan–elite relations).
+  </div>
+
+  <div class="arg">
+    <b>C2 (8)</b><br>
+    Claim: Starshinas rejected full subjecthood.<br>
+    Evidence: they threatened Tevkelev; wanted peace but not to be subjects; only about thirty were persuaded by gifts.<br>
+    Source: Tevkelev (1731).<br>
+    Link: elites and gift-giving decided consent.
+  </div>
+
+  <div class="arg">
+    <b>C3 (8)</b><br>
+    Claim: Russia and Qazaqs understood the oath differently.<br>
+    Evidence: Kirilov used the oath to propose forts, trade and a route to India; Sabol notes Abu'l-Khayr sought assistance rather than incorporation.<br>
+    Source: Kirilov (1734); Sabol (2003).<br>
+    Link: “voluntary submission” is a Russian imperial reading (theme: imperial encounter).
+  </div>
+
+  <div class="arg counter">
+    <b>C4 Counter (8)</b><br>
+    Counter: Bukenbai Batyr and others swore and promised yasak/hostages, so maybe acceptance was real.<br>
+    Evidence: Tevkelev, 1731.<br>
+    However / rebuttal: they were persuaded by gifts and threats; Bukenbai also planned to migrate to the Yaik if the horde refused — so the oath divided elites, not the whole people.
+  </div>
+
+  <div class="help">
+    <b>Почему это 50/50:</b> в терминах есть significance; thesis с анализом; в каждом C есть claim + факт + source + link; counter с источником и ответом; нет reader и нет «Kazakh nation».
+  </div>
+</section>
+
+<section id="phrases">
+  <h2>6c. Готовые фразы на бланк</h2>
+  <div class="help">Вставляй кусками, когда тупишь. Это не вода — это связки для баллов.</div>
+  <ul class="small">
+    <li><span class="en">This source is valuable because it shows…</span> — источник полезен, потому что показывает…</li>
+    <li><span class="en">However, its value is limited because the author wrote for…</span> — но автор писал для…, поэтому есть bias</li>
+    <li><span class="en">This evidence supports the claim that…, since…</span> — этот факт поддерживает утверждение, потому что…</li>
+    <li><span class="en">In the context of the Chinggisid political system…</span> — в контексте чингизидской системы…</li>
+    <li><span class="en">Rather than…, the source suggests…</span> — не …, а источник показывает…</li>
+    <li><span class="en">This challenges the traditional (Soviet / Russian imperial / nationalist) view that…</span> — это бьёт по старой версии, что…</li>
+    <li><span class="en">A critic could argue…, but this overlooks…</span> — критик скажет…, но он не учитывает…</li>
+    <li><span class="en">Taken together, [Source A] and [Source B] show…</span> — вместе два источника показывают…</li>
+    <li><span class="en">X was less A than B, because…</span> — X было скорее не А, а Б, потому что…</li>
+    <li><span class="en">To a large / limited extent…, because…</span> — в большой / малой степени…, потому что…</li>
+  </ul>
+</section>
+
+<section id="extra">
+  <h2>6d. Ещё мелкие термины, которые могут всплыть</h2>
+
+  <details><summary>Alash</summary>
+  <div class="body small">
+    Shared identity name for Qazaqs (Dair 1781: Alash &gt; Zhuz &gt; Il &gt; Uru).
+    <div class="help">Показывает, что общее «мы-казахи» было раньше современной нации.</div>
+  </div></details>
+
+  <details><summary>Batyr</summary>
+  <div class="body small">
+    Warrior-hero / military leader (Bukenbai Batyr, Bogenbay).
+    <div class="help">Не хан по крови, но может решать войну и политику. Часто kingmaker.</div>
+  </div></details>
+
+  <details><summary>Kontaisha / Junghar ruler</summary>
+  <div class="body small">
+    Title/name Russians used for Junghar ruler; major threat in Tevkelev’s world.
+    <div class="help">Одна из причин, почему Abu'l-Khayr бежал под русскую «крышу».</div>
+  </div></details>
+
+  <details><summary>Waifan / belek (tribute horses)</summary>
+  <div class="body small">
+    Qing outer-vassal category; belek = tribute gifts (often horses) with memorials.
+    <div class="help">Цин видит «внешнего вассала», не всегда провинцию под прямым контролем.</div>
+  </div></details>
+
+  <details><summary>Treaty of Kyakhta (1727)</summary>
+  <div class="body small">
+    Russo-Qing border treaty later used to oppose Qing–Qazaq contacts (Ghubaydulla context).
+    <div class="help">Две империи договариваются между собой, а казахи оказываются между ними.</div>
+  </div></details>
+
+  <details><summary>Print-nationalism</summary>
+  <div class="body small">
+    Sabol’s term: national awareness through late 19th–early 20th Qazaq press (Qazaq, Ai Qap).
+    <div class="help">Нация через газеты и печать — позже Кенесары. Поэтому 1830-е ≠ modern nationalism.</div>
+  </div></details>
+
+  <details><summary>Jadidism</summary>
+  <div class="body small">
+    Islamic modernist reform among Tatars (new-method schools).
+    <div class="help">Татары видели себя «цивилизаторами»; это часть поздней исламской/интеллектуальной истории.</div>
+  </div></details>
+
+  <details><summary>Baranta / barymta</summary>
+  <div class="body small">
+    Raid as dispute/debt pressure in adat; Russians often call it theft.
+    <div class="help">Из-за этого Кенесары легко назвали разбойником в русских бумагах.</div>
   </div></details>
 </section>
 
@@ -997,10 +1148,14 @@ li { margin:.25rem 0; }
     t=setTimeout(()=>{
       clearMarks(root);
       const term=input.value.trim();
-      document.querySelectorAll('details').forEach(d=>d.style.display='');
+      document.querySelectorAll('details').forEach(d=>{
+        if(d.classList.contains('nav-box')) return;
+        d.style.display='';
+      });
       if(!term) return;
       const low=term.toLowerCase();
       document.querySelectorAll('details').forEach(d=>{
+        if(d.classList.contains('nav-box')) return;
         const hit=d.textContent.toLowerCase().includes(low);
         d.style.display=hit?'':'none';
         if(hit) d.open=true;
@@ -1008,6 +1163,17 @@ li { margin:.25rem 0; }
       markText(root,term);
     },140);
   });
+
+  const navBox=document.querySelector('.nav-box');
+  if(navBox){
+    const mq=window.matchMedia('(min-width:721px)');
+    const syncNav=()=>{ if(mq.matches) navBox.open=true; else navBox.open=false; };
+    syncNav();
+    mq.addEventListener('change', syncNav);
+    navBox.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      if(!mq.matches) navBox.open=false;
+    }));
+  }
 })();
 </script>
 </body>
